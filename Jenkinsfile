@@ -13,7 +13,7 @@ pipeline {
         }
           stage('clone GitRepo'){
             steps{
-              git branch:'main' credentialsId : 'srinivasraokolluru@gmail.com' url: 'https://github.com/KolluruSrinivas/Jenkins-Pipeline'
+              git branch:'main',credentialsId : 'srinivasraokolluru@gmail.com', url: 'https://github.com/KolluruSrinivas/Jenkins-Pipeline'
                 
         }
           }
