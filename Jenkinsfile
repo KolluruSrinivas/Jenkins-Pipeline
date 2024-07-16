@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Read HTML File') {
             steps {
@@ -11,6 +10,7 @@ pipeline {
                     // Further steps using the HTML content
                 }
             }
+        }
           stage('checkout'){
             steps{
               git 'https://github.com/KolluruSrinivas/Jenkins-Pipeline'
@@ -36,4 +36,4 @@ pipeline {
             }
           }
         } 
-    }        
+    }
