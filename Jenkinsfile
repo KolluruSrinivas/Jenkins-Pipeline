@@ -11,11 +11,11 @@ pipeline {
                 }
             }
         }
-          stage('clone GitRepo'){
-            steps{
-              git branch:'main',credentialsId : 'KolluruSrinivas', url: 'https://github.com/KolluruSrinivas/Jenkins-Pipeline'
-                
-        }
+          stage ('Git Checkout') {
+  steps {
+      git branch: 'main', url: 'https://github.com/KolluruSrinivas/Jenkins-Pipeline.git'
+     }
+  }
           }
           stage('Terraform Init'){
             steps{
