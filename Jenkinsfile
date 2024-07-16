@@ -16,9 +16,10 @@ pipeline {
                   git branch: 'main', credentialsId:'4d332a54-cd64-43a6-aad1-a97f4447f947', url: 'https://github.com/KolluruSrinivas/Jenkins-Pipeline.git'
                  }
               }
+        
           stage('Terraform Init'){
             steps{
-              sh 'terraform init'
+             echo "Terraform init"
             }
           }
           stage('Terraform Plan'){
