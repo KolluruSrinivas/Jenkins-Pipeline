@@ -12,11 +12,10 @@ pipeline {
             }
         }
           stage ('Git Checkout') {
-  steps {
-      git branch: 'main', url: 'https://github.com/KolluruSrinivas/Jenkins-Pipeline.git'
-     }
-  }
-          }
+              steps {
+                  git branch: 'main', url: 'https://github.com/KolluruSrinivas/Jenkins-Pipeline.git'
+                 }
+              }
           stage('Terraform Init'){
             steps{
               sh 'terraform init'
