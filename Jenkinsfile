@@ -13,7 +13,7 @@ pipeline {
         }
           stage ('Git Checkout') {
               steps {
-                  git branch: 'main', url: 'https://github.com/KolluruSrinivas/Jenkins-Pipeline.git'
+                  git branch: 'main', credentialsId:'srinivasraokolluru@gmail.com', url: 'https://github.com/KolluruSrinivas/Jenkins-Pipeline.git'
                  }
               }
           stage('Terraform Init'){
