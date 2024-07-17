@@ -25,14 +25,14 @@ pipeline {
           stage('Terraform Plan'){
              steps {
                 // Generate and save Terraform plan
-                sh 'terraform plan -out=tfplan'
+               echo "Terraform plan"
             }
           }
 
           stage('Terraform Apply'){
             steps {
                 // Apply Terraform changes
-                sh 'terraform apply -auto-approve tfplan'
+               echo "Terraform apply"
             }
           }
         } 
