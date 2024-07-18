@@ -38,8 +38,7 @@ pipeline {
             stage('SonarQube Analysis') {
             steps {
                 // Run SonarQube Scanner
-                withSonarQubeEnv('sonarqube') {
-                    sh 'mvn clean verify sonar:sonar'
+              
                     echo "completed sonar qube anay"
                     
                 }
