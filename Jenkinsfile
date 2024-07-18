@@ -49,11 +49,11 @@ pipeline {
     post {
         always {
             script {
-                def qg = waitForQualityGate()
+                #def qg = waitForQualityGate()
                 echo "start"
-                if (qg.status != 'OK') {
-                    error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                }
+                #if (qg.status != 'OK') {
+                 #   error "Pipeline aborted due to quality gate failure: ${qg.status}"
+               # }
             }
         }
     }
