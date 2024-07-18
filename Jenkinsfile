@@ -35,9 +35,7 @@ pipeline {
                echo "Terraform apply"
             }
           }
-        pipeline {
-    agent any
-
+     
     stages {
         stage('SonarQube Analysis') {
             steps {
