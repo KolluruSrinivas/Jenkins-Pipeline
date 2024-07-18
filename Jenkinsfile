@@ -35,7 +35,7 @@ pipeline {
                echo "Terraform apply"
             }
           }
-       stage('SonarQube Analysis') {
+       stage('SonarQube Analysis'){
     def scannerHome = tool 'sonarqube';
     withSonarQubeEnv() {
       sh "${scannerHome}/bin/sonar-scanner"
