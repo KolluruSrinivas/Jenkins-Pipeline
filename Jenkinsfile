@@ -35,9 +35,7 @@ pipeline {
                echo "Terraform apply"
             }
           }
-     
-    stages {
-        stage('SonarQube Analysis') {
+            stage('SonarQube Analysis') {
             steps {
                 // Run SonarQube Scanner
                 withSonarQubeEnv('SonarQube Server') {
@@ -45,8 +43,6 @@ pipeline {
                 }
             }
         }
-    }
-
     post {
         always {
             // Publish Quality Gate result
@@ -54,6 +50,5 @@ pipeline {
         }
     }
 }
-
-        } 
-    }
+} 
+ 
