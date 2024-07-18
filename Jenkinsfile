@@ -35,5 +35,27 @@ pipeline {
                echo "Terraform apply"
             }
           }
+        pipeline {
+    agent any
+
+    stages {
+        stage('SonarQube Analysis') {
+            steps {
+                // Run SonarQube Scanner
+                withSonarQubeEnv('SonarQube Server') {
+                    sh 'mvn clean verify sonar:sonar'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Publish Quality Gate result
+            sonarQualityGate()
+        }
+    }
+}
+
         } 
     }
