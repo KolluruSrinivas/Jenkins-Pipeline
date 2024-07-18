@@ -41,7 +41,7 @@ pipeline {
               
                     echo "completed sonar qube anay"
                     
-                }
+                
             }
         }
     }
