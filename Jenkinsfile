@@ -40,6 +40,8 @@ pipeline {
                 // Run SonarQube Scanner
                 withSonarQubeEnv('sonarqube') {
                     sh 'mvn clean verify sonar:sonar'
+                    echo "completed sonar qube anay"
+                    
                 }
             }
         }
@@ -48,6 +50,7 @@ pipeline {
         always {
             script {
                 def qg = waitForQualityGate()
+                echo "start"
                 if (qg.status != 'OK') {
                     error "Pipeline aborted due to quality gate failure: ${qg.status}"
                 }
