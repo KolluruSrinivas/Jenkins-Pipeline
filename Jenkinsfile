@@ -38,7 +38,7 @@ pipeline {
             stage('SonarQube Analysis') {
             steps {
                 // Run SonarQube Scanner
-                withSonarQubeEnv('SonarQube Server') {
+                withSonarQubeEnv('Sonar way') {
                     sh 'mvn clean verify sonar:sonar'
                 }
             }
