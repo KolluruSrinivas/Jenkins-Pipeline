@@ -43,12 +43,13 @@ pipeline {
                 }
             }
         }
+    }
     post {
         always {
             // Publish Quality Gate result
             sonarQualityGate()
         }
     }
-  }
+
 } 
  
