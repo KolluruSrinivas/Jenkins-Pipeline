@@ -35,10 +35,10 @@ pipeline {
                echo "Terraform apply"
             }
           }
-            stage('SonarQube Analysis') {
-    def mvn = tool 'Default Maven';
+       stage('SonarQube Analysis') {
+    def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv() {
-      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Test-Sonar -Dsonar.projectName='Test-Sonar'"
+      sh "${scannerHome}/bin/sonar-scanner"
     }
   }
     }
